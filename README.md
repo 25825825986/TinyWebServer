@@ -1,4 +1,5 @@
-
+跟着大佬的项目做一下，在windows10，用vscode写了几个配置文件，用wsl远程连接运行
+原项目：https://github.com/qinguoyi/TinyWebServer.git
 
 TinyWebServer
 ===============
