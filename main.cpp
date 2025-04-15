@@ -4,8 +4,8 @@ int main(int argc, char *argv[])
 {
     //需要修改的数据库信息,登录名,密码,库名
     string user = "root";
-    string passwd = "root";
-    string databasename = "qgydb";
+    string passwd = "050422";
+    string databasename = "Tinyserverdb";
 
     //命令行解析
     Config config;
@@ -39,3 +39,35 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+/*
+// 建立yourdb库
+create database Tinyserverdb;
+
+// 创建user表
+USE Tinyserverdb;
+CREATE TABLE user(
+    username char(50) NULL,
+    passwd char(50) NULL
+)ENGINE=InnoDB;
+
+// 添加数据
+INSERT INTO user(username, passwd) VALUES('fengyue', '123456');
+
+//项目结构
+TinyWebServer/
+├── build.sh            # 构建脚本
+├── makefile            # Makefile 文件
+├── main.cpp            # 程序入口，初始化数据库信息
+├── webserver.cpp/.h    # 核心服务器逻辑
+├── config.cpp/.h       # 全局配置解析
+├── CGImysql/           # CGI 与 MySQL 辅助类
+├── http/               # HTTP 解析与连接处理
+├── lock/               # 同步机制封装
+├── log/                # 同步/异步日志系统
+├── threadpool/         # 半同步/半反应堆线程池
+├── timer/              # 非活动连接定时器管理
+├── test_pressure/      # 内置 Webbench 压力测试工具
+└── README.md           # 项目说明文档
+
+*/

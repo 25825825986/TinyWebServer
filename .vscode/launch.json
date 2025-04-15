@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug TinyWebServer",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/server",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "environment": [
+        { "name": "LD_LIBRARY_PATH", "value": "/usr/lib/mysql" }
+      ],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      // —— 在这里加入 miDebuggerArgs —— 
+      "miDebuggerArgs": "-q -ex quit; wait() { fg >/dev/null; }; /usr/bin/gdb -q --interpreter=mi",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "构建 TinyWebServer"
+    }
+  ]
+}
